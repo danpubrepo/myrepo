@@ -82,5 +82,6 @@ After build, run Docker image
 docker run -p 8001:8001 asr-api
 
 use another terminal and check for the ping and start running some samples
-curl -F "file=@C:/Users/danie/Documents/Machine Learning/HTX/myrepo/harvard.mp3" http://localhost:8001/asr
+curl -F "file=@C:/Users/danie/Documents/Machine Learning/HTX/myrepo/common_voice/cv-valid-dev/sample-000000.mp3" http://localhost:8001/asr
+
 
