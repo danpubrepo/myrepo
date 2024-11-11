@@ -73,6 +73,14 @@ Mon Nov 11 15:25:32 2024
 |=========================================================================================|
 |  No running processes found                                                             |
 +-----------------------------------------------------------------------------------------+
+
+
 Build Docker image
 docker build -t asr-api .
+
+After build, run Docker image
+docker run -p 8001:8001 asr-api
+
+use another terminal and check for the ping and start running some samples
+curl -F "file=@C:/Users/danie/Documents/Machine Learning/HTX/myrepo/harvard.mp3" http://localhost:8001/asr
 
