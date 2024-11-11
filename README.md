@@ -31,3 +31,48 @@ https://learn.microsoft.com/en-us/windows/wsl/install
 Must install via Powershell as an admin.
 type "wsl --unregister ubuntu"
 type "wsl --install" and follow through all the instructions.
+
+Install Nvidia Container Toolkit.
+Follow this link for instructions https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html
+
+Docker pull a cuda image from the Docker hub repo and run it to check for GPU support.
+
+C:\Users\danie\Documents\Machine Learning\HTX\myrepo>docker run --rm --gpus all nvidia/cuda:11.8.0-cudnn8-devel-ubuntu22.04 nvidia-smi
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 11.8.0
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+Mon Nov 11 15:25:32 2024
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 555.59                 Driver Version: 556.13         CUDA Version: 12.5     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GeForce RTX 3070 ...    On  |   00000000:01:00.0 Off |                  N/A |
+| N/A   67C    P8             13W /   80W |       0MiB /   8192MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Build Docker image
+docker build -t asr-api .
+
