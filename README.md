@@ -29,4 +29,5 @@ Setup GPU support
 Install WSL follow the link
 https://learn.microsoft.com/en-us/windows/wsl/install
 Must install via Powershell as an admin.
+type "wsl --unregister ubuntu"
 type "wsl --install" and follow through all the instructions.
